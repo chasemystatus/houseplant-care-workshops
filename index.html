@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Houseplant Care Workshops</title>
+    <meta name="description" content="Explore practical Monstera, peace lily and succulent workshops and try a demo interest form. Your details are not sent.">
+  </head>
+  <body class="theme">
+    <header class="header">
+      <div class="header-row">
+        <h1>Houseplant Care Workshops</h1>
+        <button id="theme-button" class="theme-button" type="button">Change theme</button>
+      </div>
+      <p class="introduction">
+        Keep your houseplants happier with a little practical know-how. Explore
+        the workshops below, then try the interest form. This is a practice
+        page, so your details won't be sent.
+      </p>
+    </header>
+
+    <main>
+      <h2>Choose a workshop</h2>
+      <div class="gallery">
+        <div class="gallery-card">
+          <img
+            src="src/img/monstera.jpg"
+            alt="Monstera houseplant in a wooden pot"
+          />
+          <h3>Monstera Basics</h3>
+          <p>
+            Learn how to give your Monstera the right light, water and room to
+            grow.
+          </p>
+        </div>
+        <div class="gallery-card">
+          <img
+            src="src/img/peace-lily.jpg"
+            alt="Peace lily houseplant in a two-tone ceramic pot"
+          />
+          <h3>Peace Lily Care</h3>
+          <p>
+            Get to know the signs your peace lily gives you when it needs a
+            change.
+          </p>
+        </div>
+        <div class="gallery-card">
+          <img
+            src="src/img/succulents-800-optimised.jpg"
+            alt="A hand reaching towards the leaf of a potted succulent houseplant"
+          />
+          <h3>Succulent Survival</h3>
+          <p>Find out why succulents need less fuss than you might think.</p>
+        </div>
+      </div>
+
+      <form class="interest-form">
+        <h2>Register your interest</h2>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            minlength="2"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="workshop-dropdown"
+            >Which workshop would you like to attend?</label
+          >
+          <select id="workshop-dropdown" name="workshop-choice" required>
+            <option value="">Select a workshop</option>
+            <option value="monstera">Monstera Basics</option>
+            <option value="peace-lily">Peace Lily Care</option>
+            <option value="succulents">Succulent Survival</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="number-of-places">Number of places (maximum 3)</label>
+          <input
+            id="number-of-places"
+            name="tickets"
+            type="number"
+            min="1"
+            max="3"
+            value="1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="question">Do you have any questions? (optional)</label>
+          <textarea id="question" name="question"></textarea>
+        </div>
+        <div class="form-group">
+          <button class="submit-button" type="submit">Submit interest</button>
+          <p class="submission-message" role="status"></p>
+        </div>
+      </form>
+    </main>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

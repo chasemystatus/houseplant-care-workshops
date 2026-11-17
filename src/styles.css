@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: lemonchiffon;
+  color: rgb(9, 128, 76);
+  font-family: "Encode Sans Semi Expanded", serif;
+  line-height: 1.5;
+  padding: 20px 50px;
+  margin: 0;
+}
+
+header,
+main {
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+h1 {
+  font-size: 3.25rem;
+}
+
+.theme-button,
+.submit-button {
+  display: inline-block;
+  appearance: none;
+  padding: 0px 30px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgb(9, 128, 76);
+  box-shadow: rgb(19 170 82 / 40%) 0px 2px 3px;
+  color: lemonchiffon;
+  font-size: 16px;
+  font-weight: 500;
+  height: 40px;
+  transition: all 200ms ease-in-out 0s;
+}
+
+.theme-button:hover {
+  color: lemonchiffon;
+  background-color: rgb(17, 97, 73);
+  box-shadow:
+    rgb(19 170 82 / 40%) 0px 2px 3px,
+    rgb(195 231 202) 0px 0px 0px 3px;
+}
+
+.theme-button:focus-visible,
+.submit-button:focus-visible {
+  outline: 3px solid #116149;
+  outline-offset: 3px;
+}
+
+.dark-theme {
+  background: rgb(17, 97, 73);
+  color: lemonchiffon;
+}
+
+.dark-theme .theme-button,
+.dark-theme .submit-button {
+  background-color: lemonchiffon;
+  color: #116149;
+}
+
+.dark-theme .theme-button:focus-visible,
+.dark-theme .submit-button:focus-visible {
+  outline: 3px solid lemonchiffon;
+  outline-offset: 3px;
+}
+
+.introduction {
+  margin-top: 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.gallery-card {
+  padding: 1rem;
+  text-align: center;
+}
+
+.gallery-card img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 200ms ease;
+}
+
+.gallery-card img:hover {
+  transform: translateY(-2px);
+}
+
+form {
+  max-width: 32rem;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+.form-group {
+  margin: 1rem 0;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.form-group select:focus-visible {
+  outline: 3px solid #116149;
+  outline-offset: 3px;
+}
+
+.dark-theme .form-group input:focus-visible,
+.dark-theme .form-group textarea:focus-visible,
+.dark-theme .form-group select:focus-visible {
+  outline: 3px solid lemonchiffon;
+  outline-offset: 3px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.form-group textarea {
+  min-height: 6rem;
+}
+
+.submit-button {
+  display: block;
+  margin: 1.5rem auto;
+}
+
+.submit-button:hover {
+  color: lemonchiffon;
+  background-color: rgb(17, 97, 73);
+  box-shadow:
+    rgb(19 170 82 / 40%) 0px 2px 3px,
+    rgb(195 231 202) 0px 0px 0px 3px;
+}
+
+.submission-message {
+  min-height: 5rem;
+}
+
+@media (min-width: 1151px) {
+  .theme-button {
+    translate: -0.5rem -0.5rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  .header-row {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 16px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .introduction {
+    text-align: center;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 0.5rem);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-inline: 0;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card:last-child {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card {
+    transition: none;
+    transform: none;
+  }
+}
